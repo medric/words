@@ -18,7 +18,7 @@ def filter_words(words, length=MAX_LENGTH):
 def is_composed_of_sub_words(word, words):
     '''
     Iterate over the given word by splitting it multiple times
-    Then, look for small words into words list
+    Then, look for small words into word list
     :param word:
     :param words:
     :return:
@@ -30,13 +30,11 @@ def is_composed_of_sub_words(word, words):
 
         if first_part in words:
             part['first'] = first_part
-        if second_part in words:
-            part['second'] = second_part
-
-        # if the small words are both in the words list, add them to sub list
-        # word is a composed word
-        if part['first'] and part['second']:
-            sub.append(part)
+            if second_part in words:
+                part['second'] = second_part
+                # if the small words are both in the word list, add them to sub list
+                # word is a composed word
+                sub.append(part)
 
     return sub
 
